@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import { listPosts, getPost } from '../../graphql/queries'
+import Link from 'next/link'
 
 export default function Post({ post }) {
   const [coverImage, setCoverImage] = useState(null)
@@ -30,6 +31,7 @@ export default function Post({ post }) {
       <div className="mt-8">
         <ReactMarkdown className='prose' children={post.content} />
       </div>
+      <Link href="/"><a className="font-semibold my-4">Back to Home</a></Link>
     </div>
   )
 }

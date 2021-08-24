@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
   <div>
-  <nav className="p-6 border-b border-gray-300 bg-red-300">
+  <nav className="p-6 border-b border-gray-300 text-white bg-blue-700">
     <Link href="/">
       <a><span className="mr-6 cursor-pointer">Home</span></a>
     </Link>
