@@ -7,9 +7,12 @@ import Link from 'next/link'
 
 export default function Post({ post }) {
   const [coverImage, setCoverImage] = useState(null)
+
   useEffect(() => {
     updateCoverImage()
+    //eslint-disable-next-line import/no-extraneous-dependencies
   }, [])
+
   async function updateCoverImage() {
     if (post.coverImage) {
       const imageKey = await Storage.get(post.coverImage)
@@ -29,7 +32,7 @@ export default function Post({ post }) {
       }
       <p className="text-sm font-light my-4">by {post.username}</p>
       <div className="mt-8">
-        <ReactMarkdown className='prose' children={post.content} />
+        <ReactMarkdown className='prose' props={post.content} />
       </div>
       <Link href="/"><a className="font-semibold my-4">Back to Home</a></Link>
     </div>
