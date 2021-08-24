@@ -32,7 +32,7 @@ export default function Post({ post }) {
       }
       <p className="text-sm font-light my-4">by {post.username}</p>
       <div className="mt-8">
-        <ReactMarkdown className='prose' props={post.content} />
+        <ReactMarkdown className='prose' children={post.content} />
       </div>
       <Link href="/"><a className="font-semibold my-4">Back to Home</a></Link>
     </div>
