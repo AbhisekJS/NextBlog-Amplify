@@ -25,8 +25,8 @@ export default function Post({ post }) {
     return <div>Loading...</div>
   }
   return (
-    <div>
-      <h1 className="text-5xl mt-4 font-semibold tracking-wide">{post.title}</h1>
+    <div className="max-w-md flex-column items-center justify-center">
+      <h1 className="text-3xl mt-4 font-semibold tracking-wide">{post.title}</h1>
       {
         coverImage && <img src={coverImage} className="mt-4" alt={post.title}/>
       }
