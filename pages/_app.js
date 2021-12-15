@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(()=>{
     authListener()
-  })
+  },[])
   async function authListener(){
     Hub.listen('auth',(data)=>{
       switch(data.payload.event){

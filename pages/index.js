@@ -33,10 +33,10 @@ export default function Home() {
       { posts.map((post, index) => (
         <Link key={index} href={`/posts/${post.id}`}><a>
           <div className="max-w-sm rounded overflow-hidden shadow-lg mr-5 mt-5">
-          <img className="w-full" src={post.coverImage} alt="{post.title}"/>
+          <img className="w-full" src={post.coverImage} alt={post.title}/>
           <div className="px-6 py-4">
         <div className="font-bold text-l mb-2">{post.title}</div>
-        <p className="text-gray-700 text-base">Author: <span className="italic">{post.username.toUpperCase()}</span></p>
+        <p className="text-gray-700 text-base">Author: <span className="italic">{post?.username?.toUpperCase()}</span></p>
         <p className="text-gray-700 text-base truncate max-w-md">{post.content}</p>
         </div>
           </div>

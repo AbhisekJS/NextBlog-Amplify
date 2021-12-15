@@ -1,6 +1,6 @@
 {
   "api": {
-    "NextBlog": {
+    "nextamplify": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -9,6 +9,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2022-12-15T17:47:58.030Z",
               "description": "public"
             }
           },
@@ -16,7 +17,7 @@
             {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
-                "userPoolId": "authnextamplify4e0377dd"
+                "userPoolId": "authnextamplifyd7f18a6d"
               }
             }
           ]
@@ -25,15 +26,14 @@
     }
   },
   "auth": {
-    "nextamplify4e0377dd": {
+    "nextamplifyd7f18a6d": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
-        "loginMechanism": [
-          "PREFERRED_USERNAME"
-        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -44,14 +44,18 @@
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
         ]
       }
     }
   },
   "storage": {
-    "projectimages": {
+    "nextblogdec2021": {
       "service": "S3",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   },
   "hosting": {
@@ -59,10 +63,6 @@
       "service": "amplifyhosting",
       "providerPlugin": "awscloudformation",
       "type": "manual"
-    },
-    "S3AndCloudFront": {
-      "service": "S3AndCloudFront",
-      "providerPlugin": "awscloudformation"
     }
   }
 }

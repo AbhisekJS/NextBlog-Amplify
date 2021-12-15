@@ -15,9 +15,11 @@ function CreatePost() {
   const hiddenFileInput = useRef(null);
   const { title, content } = post
   const router = useRouter()
+
   function onChange(e) {
     setPost(() => ({ ...post, [e.target.name]: e.target.value }))
   }
+
   async function createNewPost() {
     if (!title || !content) return
     const id = uuid() 
@@ -36,17 +38,21 @@ function CreatePost() {
     })
     router.push(`/posts/${id}`)
   }
+
   async function uploadImage() {
     hiddenFileInput.current.click();
   }
+
   function handleChange (e) {
     const fileUploaded = e.target.files[0];
     if (!fileUploaded) return
     setImage(fileUploaded)
   }
+
   return (
     <div>
       <h1 className="text-3xl font-semibold tracking-wide mt-6">Create new post</h1>
+      
       <input
         onChange={onChange}
         name="title"
@@ -72,6 +78,7 @@ function CreatePost() {
       >
         Upload Cover Image
       </button>
+      
       <button
         type="button"
         className="mb-4 mt-2 bg-blue-600 text-white w-full font-semibold px-8 py-2 rounded-lg sm:mt-0 sm:w-auto"

@@ -1,5 +1,5 @@
 projects:
-  NextBlog:
+  nextamplify:
     schemaPath: graphql/schema.json
     includes:
       - ./graphql/**/*.js

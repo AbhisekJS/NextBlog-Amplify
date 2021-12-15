@@ -1,0 +1,16 @@
+{
+  "resourceName": "nextblogdec2021",
+  "policyUUID": "bd83ea73",
+  "bucketName": "nextamplifyb85063af60b34c3898d430bf31c1685d",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

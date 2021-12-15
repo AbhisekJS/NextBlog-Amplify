@@ -27,24 +27,31 @@ function EditPost() {
       }
     }
   }, [id])
+
   if (!post) return null
+
   async function updateCoverImage(coverImage) {
     const imageKey = await Storage.get(coverImage)
     setCoverImage(imageKey)
   }
+
   async function uploadImage() {
     fileInput.current.click();
   }
+
   function handleChange (e) {
     const fileUploaded = e.target.files[0];
     if (!fileUploaded) return
     setCoverImage(fileUploaded)
     setLocalImage(URL.createObjectURL(fileUploaded))
   }
+  
   function onChange(e) {
     setPost(() => ({ ...post, [e.target.name]: e.target.value }))
   }
+
   const { title, content } = post
+
   async function updateCurrentPost() {
     if (!title || !content) return
     const postUpdated = {
