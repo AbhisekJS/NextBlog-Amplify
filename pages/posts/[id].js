@@ -40,25 +40,15 @@ export default function Post({ post }) {
   )
 }
 
-export async function getStaticPaths() {
-  const postData = await API.graphql({
-    query: listPosts
-  })
-  const paths = postData.data.listPosts.items.map(post => ({ params: { id: post.id }}))
-  return {
-    paths,
-    fallback: true
-  }
-}
-
-export async function getStaticProps ({ params }) {
-  const { id } = params
+export async function getServerSideProps(context) {
+  const { id } = context.query;
   const postData = await API.graphql({
     query: getPost, variables: { id }
   })
   return {
     props: {
-      post: postData.data.getPost
-    }
-  }
+      post: postData.data.getPost,
+    },
+    
+  } 
 }

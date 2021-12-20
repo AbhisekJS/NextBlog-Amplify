@@ -43,31 +43,7 @@ export default function Home() {
         </a></Link>)
         )
       }
-      </div>
-      
+      </div>    
     </div>
-
-
-
-    // <div>
-    //   <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-8">Posts</h1>
-    //   <div className="flex w-50">
-    //   {posts.map((post, index) => (
-    //     <Link key={index} href={`/posts/${post.id}`}>
-    //       <a><div className="my-6 pb-6 	">
-    //         {
-    //           post.coverImage && <img src={post.coverImage} className="w-56" />
-    //         }
-    //         <div className="cursor-pointer mt-2 border-2">
-    //           <h2 className="text-xl font-semibold">{post.title}</h2>
-    //           <p className="text-gray-500 mt-2">Author: {post.username}</p>
-    //         </div>
-    //       </div>
-    //       </a>
-    //     </Link>)
-    //     )
-    //   }
-    //   </div>
-    // </div>
   )
 }
